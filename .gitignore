@@ -1,1 +1,6 @@
 /lib/v8/build/*.suo
+/*.sdf
+/build/obj/Debug/*.log
+/build/obj/Debug/ml_v8.tlog
+/build/obj/Release
+/build/obj/Debug

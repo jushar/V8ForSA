@@ -39,6 +39,9 @@
     <Filter Include="Header Files\lua">
       <UniqueIdentifier>{d098e1ca-0897-4845-b176-ce055b9f47d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scriptwrapper">
+      <UniqueIdentifier>{98af70ca-7fca-49ca-97ea-42a961ccbe9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CThread.cpp">
@@ -268,5 +271,16 @@
     <ClInclude Include="MTASA\Common.h">
       <Filter>Header Files\MTASA</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scriptwrapper\include.js">
+      <Filter>scriptwrapper</Filter>
+    </None>
+    <None Include="scriptwrapper\mta.lua">
+      <Filter>scriptwrapper</Filter>
+    </None>
+    <None Include="scriptwrapper\samp.amx">
+      <Filter>scriptwrapper</Filter>
+    </None>
   </ItemGroup>
 </Project>
