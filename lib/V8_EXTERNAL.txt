@@ -1,0 +1,6 @@
+External dirs (other repos):
+- v8/build/gyp
+- v8/third_party
+
+https://code.google.com/p/v8/wiki/BuildingWithGYP
+

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{132A627F-058D-46F8-BCBB-63B6C8D2CC1A}</ProjectGuid>
+    <Keyword>MFCDLLProj</Keyword>
+    <ProjectName>ml_v8</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\include;.\lib\v8;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalOptions>/MTd %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>./lib/lua5.1.lib;winmm.lib;./lib/v8/build/Debug/lib/icui18n.lib;./lib/v8/build/Debug/lib/icuuc.lib;./lib/v8/build/Debug/lib/v8_base.lib;./lib/v8/build/Debug/lib/v8_libbase.lib;./lib/v8/build/Debug/lib/v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ml_v8.dll</OutputFile>
+      <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile />
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(OutDir)ml_v8.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>./lib/lua5.1.lib;./lib/v8/build/Release/lib/icui18n.lib;./lib/v8/build/Release/lib/icuuc.lib;./lib/v8/build/Release/lib/v8_base.lib;./lib/v8/build/Release/lib/v8_libbase.lib;./lib/v8/build/Release/lib/v8_libplatform.lib;./lib/v8/build/Release/lib/v8_nosnapshot.lib;./lib/v8/build/Release/lib/v8_snapshot.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ml_v8.dll</OutputFile>
+      <ModuleDefinitionFile />
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)ml_v8.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CThread.cpp" />
+    <ClCompile Include="CThreadData.cpp" />
+    <ClCompile Include="extra\CLuaArgument.cpp" />
+    <ClCompile Include="extra\CLuaArguments.cpp" />
+    <ClCompile Include="lib\lua\lapi.c" />
+    <ClCompile Include="lib\lua\lauxlib.c" />
+    <ClCompile Include="lib\lua\lbaselib.c" />
+    <ClCompile Include="lib\lua\lcode.c" />
+    <ClCompile Include="lib\lua\ldblib.c" />
+    <ClCompile Include="lib\lua\ldebug.c" />
+    <ClCompile Include="lib\lua\ldo.c" />
+    <ClCompile Include="lib\lua\ldump.c" />
+    <ClCompile Include="lib\lua\lfunc.c" />
+    <ClCompile Include="lib\lua\lgc.c" />
+    <ClCompile Include="lib\lua\linit.c" />
+    <ClCompile Include="lib\lua\liolib.c" />
+    <ClCompile Include="lib\lua\llex.c" />
+    <ClCompile Include="lib\lua\lmathlib.c" />
+    <ClCompile Include="lib\lua\lmem.c" />
+    <ClCompile Include="lib\lua\loadlib.c" />
+    <ClCompile Include="lib\lua\lobject.c" />
+    <ClCompile Include="lib\lua\lopcodes.c" />
+    <ClCompile Include="lib\lua\loslib.c" />
+    <ClCompile Include="lib\lua\lparser.c" />
+    <ClCompile Include="lib\lua\lstate.c" />
+    <ClCompile Include="lib\lua\lstring.c" />
+    <ClCompile Include="lib\lua\lstrlib.c" />
+    <ClCompile Include="lib\lua\ltable.c" />
+    <ClCompile Include="lib\lua\ltablib.c" />
+    <ClCompile Include="lib\lua\ltm.c" />
+    <ClCompile Include="lib\lua\lundump.c" />
+    <ClCompile Include="lib\lua\lvm.c" />
+    <ClCompile Include="lib\lua\lzio.c" />
+    <ClCompile Include="lib\lua\print.c" />
+    <ClCompile Include="MTASA\ml_v8_mtasa.cpp" />
+    <ClCompile Include="MTASA\MTASA.cpp" />
+    <ClCompile Include="SAMP\amxplugin.cpp" />
+    <ClCompile Include="SAMP\ml_v8_samp.cpp" />
+    <ClCompile Include="V8Wrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CThread.h" />
+    <ClInclude Include="CThreadData.h" />
+    <ClInclude Include="extra\CLuaArgument.h" />
+    <ClInclude Include="extra\CLuaArguments.h" />
+    <ClInclude Include="include\ILuaModuleManager.h" />
+    <ClInclude Include="include\pawn\amx.h" />
+    <ClInclude Include="include\pawn\sclinux.h" />
+    <ClInclude Include="lib\lua\lapi.h" />
+    <ClInclude Include="lib\lua\lauxlib.h" />
+    <ClInclude Include="lib\lua\lcode.h" />
+    <ClInclude Include="lib\lua\ldebug.h" />
+    <ClInclude Include="lib\lua\ldo.h" />
+    <ClInclude Include="lib\lua\lfunc.h" />
+    <ClInclude Include="lib\lua\lgc.h" />
+    <ClInclude Include="lib\lua\llex.h" />
+    <ClInclude Include="lib\lua\llimits.h" />
+    <ClInclude Include="lib\lua\lmem.h" />
+    <ClInclude Include="lib\lua\lobject.h" />
+    <ClInclude Include="lib\lua\lopcodes.h" />
+    <ClInclude Include="lib\lua\lparser.h" />
+    <ClInclude Include="lib\lua\lstate.h" />
+    <ClInclude Include="lib\lua\lstring.h" />
+    <ClInclude Include="lib\lua\ltable.h" />
+    <ClInclude Include="lib\lua\ltm.h" />
+    <ClInclude Include="lib\lua\lua.h" />
+    <ClInclude Include="lib\lua\luaconf.h" />
+    <ClInclude Include="lib\lua\lualib.h" />
+    <ClInclude Include="lib\lua\lundump.h" />
+    <ClInclude Include="lib\lua\lvm.h" />
+    <ClInclude Include="lib\lua\lzio.h" />
+    <ClInclude Include="MTASA\Common.h" />
+    <ClInclude Include="MTASA\ml_v8_mtasa.h" />
+    <ClInclude Include="MTASA\MTASA.h" />
+    <ClInclude Include="SAMP\ml_v8_samp.h" />
+    <ClInclude Include="SAMP\plugincommon.h" />
+    <ClInclude Include="V8Wrapper.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
