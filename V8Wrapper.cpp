@@ -7,7 +7,9 @@
 *****************************************************************/
 #include "V8Wrapper.h"
 #include "MTASA/MTASA.h"
-#include "extra/CLuaArguments.h"
+#include "SAMP/SAMP.h"
+#include "MTASA/CLuaArguments.h"
+#include "SAMP/AmxArguments.h"
 using namespace v8;
 
 V8Wrapper* g_pV8Wrapper;
@@ -19,6 +21,7 @@ V8Wrapper::V8Wrapper(bool isMTA) : m_IsMTA(isMTA), m_pIsolate(Isolate::New()), m
     Handle<ObjectTemplate> global = ObjectTemplate::New();
     global->Set(String::NewFromUtf8(m_pIsolate, "print"), FunctionTemplate::New(m_pIsolate, Script_Print));
     global->Set(String::NewFromUtf8(m_pIsolate, "callNativeFunction"), FunctionTemplate::New(m_pIsolate, Script_CallNativeFunction));
+    global->Set(String::NewFromUtf8(m_pIsolate, "isMTA"), FunctionTemplate::New(m_pIsolate, Script_IsMTA));
 
     Handle<Context> context = Context::New(m_pIsolate, nullptr, global);
     Context::Scope contextScope(context);
@@ -92,18 +95,32 @@ void V8Wrapper::Script_CallNativeFunction(const FunctionCallbackInfo<Value>& arg
     }
     else
     {
-        // Todo
-        return;
+        AmxArguments arguments;
+        for (int i = 1; i < args.Length(); ++i)
+        {
+            Handle<Value> arg = args[i];
+            
+            if (arg->IsNull())
+                arguments.PushNumber(0);
+            else if (arg->IsBoolean())
+                arguments.PushBoolean(arg->BooleanValue());
+            else if (arg->IsNumber())
+                arguments.PushNumber(static_cast<int>(arg->NumberValue())); // Todo: Floating point support
+            else if (arg->IsString())
+                arguments.PushString(*String::Utf8Value(arg->ToString()));
+        }
+
+        SAMP::CallAmxFunction(functionName, arguments);
     }
 }
 
-/*bool V8Wrapper::BindFunction(const std::string& functionName, std::function<void(const FunctionCallbackInfo<Value>&)> func)
+void V8Wrapper::Script_IsMTA(const FunctionCallbackInfo<Value>& args)
 {
-    HandleScope handleScope(m_pIsolate);
+    if (args.Length() < 1)
+    {
+        args.GetReturnValue().SetNull();
+        return;
+    }
 
-    Handle<ObjectTemplate> global = ObjectTemplate::New();
-    FunctionCallback* function = func.target<FunctionCallback>();
-    global->Set(String::NewFromUtf8(m_pIsolate, functionName.c_str()), FunctionTemplate::New(m_pIsolate, *function));
-    Handle<Context> funcContext = Context::New(m_pIsolate, nullptr, global);
-    Context::Scope contextFuncScope(funcContext);
-}*/
+    args.GetReturnValue().Set(g_pV8Wrapper->IsMTA());
+}

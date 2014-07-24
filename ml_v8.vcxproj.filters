@@ -5,15 +5,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\extra">
-      <UniqueIdentifier>{4fa6002a-32a5-4ec6-9ccd-cf65b8ee02d9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Header Files\extra">
-      <UniqueIdentifier>{318d05b2-4295-468a-8588-608b383f77bd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\include">
       <UniqueIdentifier>{049b76a2-313d-4d6b-9e7e-97aac7d0326e}</UniqueIdentifier>
@@ -49,12 +43,6 @@
     </ClCompile>
     <ClCompile Include="CThreadData.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="extra\CLuaArgument.cpp">
-      <Filter>Source Files\extra</Filter>
-    </ClCompile>
-    <ClCompile Include="extra\CLuaArguments.cpp">
-      <Filter>Source Files\extra</Filter>
     </ClCompile>
     <ClCompile Include="V8Wrapper.cpp">
       <Filter>Source Files</Filter>
@@ -161,6 +149,15 @@
     <ClCompile Include="MTASA\MTASA.cpp">
       <Filter>Source Files\MTASA</Filter>
     </ClCompile>
+    <ClCompile Include="MTASA\CLuaArguments.cpp">
+      <Filter>Source Files\MTASA</Filter>
+    </ClCompile>
+    <ClCompile Include="MTASA\CLuaArgument.cpp">
+      <Filter>Source Files\MTASA</Filter>
+    </ClCompile>
+    <ClCompile Include="SAMP\SAMP.cpp">
+      <Filter>Source Files\SAMP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CThread.h">
@@ -168,12 +165,6 @@
     </ClInclude>
     <ClInclude Include="CThreadData.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="extra\CLuaArgument.h">
-      <Filter>Header Files\extra</Filter>
-    </ClInclude>
-    <ClInclude Include="extra\CLuaArguments.h">
-      <Filter>Header Files\extra</Filter>
     </ClInclude>
     <ClInclude Include="include\ILuaModuleManager.h">
       <Filter>Header Files\include</Filter>
@@ -270,6 +261,18 @@
     </ClInclude>
     <ClInclude Include="MTASA\Common.h">
       <Filter>Header Files\MTASA</Filter>
+    </ClInclude>
+    <ClInclude Include="MTASA\CLuaArguments.h">
+      <Filter>Header Files\MTASA</Filter>
+    </ClInclude>
+    <ClInclude Include="MTASA\CLuaArgument.h">
+      <Filter>Header Files\MTASA</Filter>
+    </ClInclude>
+    <ClInclude Include="SAMP\AmxArguments.h">
+      <Filter>Header Files\SAMP</Filter>
+    </ClInclude>
+    <ClInclude Include="SAMP\SAMP.h">
+      <Filter>Header Files\SAMP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

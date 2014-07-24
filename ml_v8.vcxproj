@@ -119,8 +119,6 @@
   <ItemGroup>
     <ClCompile Include="CThread.cpp" />
     <ClCompile Include="CThreadData.cpp" />
-    <ClCompile Include="extra\CLuaArgument.cpp" />
-    <ClCompile Include="extra\CLuaArguments.cpp" />
     <ClCompile Include="lib\lua\lapi.c" />
     <ClCompile Include="lib\lua\lauxlib.c" />
     <ClCompile Include="lib\lua\lbaselib.c" />
@@ -151,17 +149,18 @@
     <ClCompile Include="lib\lua\lvm.c" />
     <ClCompile Include="lib\lua\lzio.c" />
     <ClCompile Include="lib\lua\print.c" />
+    <ClCompile Include="MTASA\CLuaArgument.cpp" />
+    <ClCompile Include="MTASA\CLuaArguments.cpp" />
     <ClCompile Include="MTASA\ml_v8_mtasa.cpp" />
     <ClCompile Include="MTASA\MTASA.cpp" />
     <ClCompile Include="SAMP\amxplugin.cpp" />
     <ClCompile Include="SAMP\ml_v8_samp.cpp" />
+    <ClCompile Include="SAMP\SAMP.cpp" />
     <ClCompile Include="V8Wrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CThread.h" />
     <ClInclude Include="CThreadData.h" />
-    <ClInclude Include="extra\CLuaArgument.h" />
-    <ClInclude Include="extra\CLuaArguments.h" />
     <ClInclude Include="include\ILuaModuleManager.h" />
     <ClInclude Include="include\pawn\amx.h" />
     <ClInclude Include="include\pawn\sclinux.h" />
@@ -188,11 +187,15 @@
     <ClInclude Include="lib\lua\lundump.h" />
     <ClInclude Include="lib\lua\lvm.h" />
     <ClInclude Include="lib\lua\lzio.h" />
+    <ClInclude Include="MTASA\CLuaArgument.h" />
+    <ClInclude Include="MTASA\CLuaArguments.h" />
     <ClInclude Include="MTASA\Common.h" />
     <ClInclude Include="MTASA\ml_v8_mtasa.h" />
     <ClInclude Include="MTASA\MTASA.h" />
+    <ClInclude Include="SAMP\AmxArguments.h" />
     <ClInclude Include="SAMP\ml_v8_samp.h" />
     <ClInclude Include="SAMP\plugincommon.h" />
+    <ClInclude Include="SAMP\SAMP.h" />
     <ClInclude Include="V8Wrapper.h" />
   </ItemGroup>
   <ItemGroup>

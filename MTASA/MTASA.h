@@ -8,7 +8,7 @@
 #pragma once
 
 #include "../include/ILuaModuleManager.h"
-#include "../extra/CLuaArguments.h"
+#include "CLuaArguments.h"
 extern ILuaModuleManager10* pModuleManager;
 
 

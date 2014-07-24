@@ -20,6 +20,7 @@ public:
 
     static void Script_Print(const v8::FunctionCallbackInfo<v8::Value>& info);
     static void Script_CallNativeFunction(const v8::FunctionCallbackInfo<v8::Value>& info);
+    static void Script_IsMTA(const v8::FunctionCallbackInfo<v8::Value>& info);
 
 private:
     bool m_IsMTA;

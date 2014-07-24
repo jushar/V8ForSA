@@ -19,6 +19,7 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void** ppData)
     
     g_pV8Wrapper = new V8Wrapper(false);
     
+
     return true;
 }
 
