@@ -27,6 +27,7 @@ AmxArgument SAMP::CallAmxFunction(const std::string& functionName, const AmxArgu
         case eAmxArgumentType::String:
             cell amx_addr, *amx_physaddr;
             amx_PushString(ms_pAmxVM, &amx_addr, &amx_physaddr, argument.GetString(), 0, 0);
+            break;
         }
     }
     
